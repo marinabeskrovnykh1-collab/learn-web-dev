@@ -1,26 +1,157 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!--
-      ЗАДАНИЕ
-      ========
-      Сверстать страницу выбора даты и времени по своему макету.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Твой Стиль — Выбор даты и времени</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение шрифта (опционально, для соответствия макету) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-      Пока это только вёрстка. Никакого JavaScript — ни кликов,
-      ни переходов, ни выбора дня. Всё статично.
+    <!-- ШАПКА -->
+    <header class="header">
+        <div class="header__logo">ТВОЙ СТИЛЬ</div>
+        <nav class="header__nav">
+            <a href="#" class="header__nav-link">Услуги</a>
+            <a href="#" class="header__nav-link">Галерея</a>
+            <a href="#" class="header__nav-link">Команда</a>
+            <a href="#" class="header__nav-link">Отзывы</a>
+            <a href="#" class="header__nav-link">Контакты</a>
+        </nav>
+    </header>
 
-      Стили пишите в styles.css. Разметку — здесь.
-    -->
+    <!-- ИНДИКАТОР ШАГОВ -->
+    <section class="steps">
+        <div class="steps__item">
+            <span class="steps__circle">1</span>
+            <span class="steps__text">Выбор мастера</span>
+        </div>
+        <div class="steps__item">
+            <span class="steps__circle">2</span>
+            <span class="steps__text">Выбор услуги</span>
+        </div>
+        <div class="steps__item steps__item--active">
+            <span class="steps__circle">3</span>
+            <span class="steps__text">Выбор времени</span>
+        </div>
+        <div class="steps__item steps__item--disabled">
+            <span class="steps__circle">4</span>
+            <span class="steps__text">Ваши контакты</span>
+        </div>
+        <div class="steps__item steps__item--disabled">
+            <span class="steps__circle">5</span>
+            <span class="steps__text">Подтверждение</span>
+        </div>
+    </section>
 
-    <div class="page">
-      <!-- Начните отсюда. Разметьте шапку, основную область
-           с календарём и слотами, подвал. -->
-    </div>
-  </body>
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="main">
+        <div class="main__header">
+            <a href="#" class="main__back-link">&lt; Назад</a>
+            <h1 class="main__title">Выберите <span class="text-green">дату</span> и время</h1>
+        </div>
+
+        <div class="content-grid">
+            <!-- КАЛЕНДАРЬ -->
+            <section class="calendar">
+                <div class="calendar__header">
+                    <h2 class="calendar__month">Октябрь 2026</h2>
+                    <div class="calendar__controls">
+                        <button class="calendar__btn-arrow" aria-label="Предыдущий месяц">&lt;</button>
+                        <button class="calendar__btn-arrow" aria-label="Следующий месяц">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="calendar__grid">
+                    <!-- Дни недели -->
+                    <div class="calendar__weekday">Пн</div>
+                    <div class="calendar__weekday">Вт</div>
+                    <div class="calendar__weekday">Ср</div>
+                    <div class="calendar__weekday">Чт</div>
+                    <div class="calendar__weekday">Пт</div>
+                    <div class="calendar__weekday">Сб</div>
+                    <div class="calendar__weekday">Вс</div>
+
+                    <!-- Числа (для примера захардкожены как в макете) -->
+                    <div class="calendar__day calendar__day--other-month">26</div>
+                    <div class="calendar__day calendar__day--other-month">27</div>
+                    <div class="calendar__day calendar__day--other-month">28</div>
+                    <div class="calendar__day calendar__day--other-month">29</div>
+                    <div class="calendar__day calendar__day--other-month">30</div>
+                    <div class="calendar__day calendar__day--other-month">31</div>
+                    <div class="calendar__day">1</div>
+                    
+                    <div class="calendar__day">2</div>
+                    <div class="calendar__day">3</div>
+                    <div class="calendar__day">4</div>
+                    <div class="calendar__day">5</div>
+                    <div class="calendar__day">6</div>
+                    <div class="calendar__day calendar__day--disabled">7</div>
+                    <div class="calendar__day calendar__day--disabled">8</div>
+                    
+                    <div class="calendar__day">9</div>
+                    <div class="calendar__day">10</div>
+                    <div class="calendar__day">11</div>
+                    <div class="calendar__day">12</div>
+                    <div class="calendar__day">13</div>
+                    <div class="calendar__day">14</div>
+                    <div class="calendar__day">15</div>
+                    
+                    <div class="calendar__day">16</div>
+                    <div class="calendar__day">17</div>
+                    <div class="calendar__day">18</div>
+                    <div class="calendar__day">19</div>
+                    <div class="calendar__day">20</div>
+                    <div class="calendar__day">21</div>
+                    <div class="calendar__day">22</div>
+                </div>
+            </section>
+
+            <!-- СЛОТЫ ВРЕМЕНИ -->
+            <section class="time-slots">
+                <h2 class="time-slots__title">Доступное время</h2>
+                <div class="time-slots__grid">
+                    <button class="time-slot">10:00</button>
+                    <button class="time-slot time-slot--busy">11:00<br><span>Занято</span></button>
+                    <button class="time-slot">12:00</button>
+                    <button class="time-slot time-slot--busy">13:00<br><span>Занято</span></button>
+                    <button class="time-slot">14:00</button>
+                    <button class="time-slot">15:00</button>
+                    <button class="time-slot">16:00</button>
+                    <button class="time-slot">17:00</button>
+                </div>
+                <div class="time-slots__footer">
+                    <button class="btn-next">Продолжить</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__col">
+                <div class="footer__logo">ТВОЙ СТИЛЬ</div>
+                <p class="footer__desc">Дружелюбное описание услуг</p>
+            </div>
+            <div class="footer__col">
+                <h3 class="footer__title">КОНТАКТЫ</h3>
+                <p class="footer__text">ул. Садовая, 15, Москва</p>
+                <p class="footer__text footer__text--phone">+7 (495) 123-45-67</p>
+            </div>
+            <div class="footer__col">
+                <h3 class="footer__title">РЕЖИМ РАБОТЫ</h3>
+                <p class="footer__text">Пн–Пт: 9:00 – 21:00</p>
+                <p class="footer__text">Сб–Вс: 10:00 – 19:00</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copy">© 2026. Все права защищены.</p>
+            <a href="#" class="footer__link">Политика конфиденциальности</a>
+        </div>
+    </footer>
+
+</body>
 </html>
